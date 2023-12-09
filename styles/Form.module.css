@@ -1,0 +1,33 @@
+.logo {
+  width: 100%;
+  height: 20%;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoText {
+  font-family: var(---font-popins);
+}
+
+.checkImage {
+  transform: scale(0.3);
+}
+
+.imageErrorMsg {
+  text-transform: capitalize;
+  /* margin: 1rem; */
+}
+
+.imageErrorMsgHide {
+  display: none;
+}
+
+.errorMsg {
+  color: red;
+  margin: 1rem 0em;
+}
+
+.errorMsgHide {
+  display: none;
+}

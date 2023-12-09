@@ -1,0 +1,42 @@
+.mainLayout {
+  height: 100%;
+  width: 100%;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  background-color:  black;
+  /* background-color:  #e9e9e9; */
+}
+
+.formBox {
+  width: 25rem;
+  /* height: 25rem; */
+  border-radius: 10px;
+  display: grid;
+  padding: 1rem;
+  background-color:  #272727;
+  /* box-shadow:  17px 17px 26px #b8b8b8,-17px -17px 26px #ffffff; */
+  /* box-shadow: 20px 20px 60px #cf9ca4,-20px -20px 60px #ffe4f2; */
+
+
+  /* background-color:transparent; */
+}
+
+.heading{
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  font-size: 1.875rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.label{
+  margin: 0.3rem 0rem;
+  color: #ffffff;
+  display: grid;
+  font-weight: 600;
+}

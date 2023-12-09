@@ -1,0 +1,271 @@
+import User from "../models/user";
+import dbConnect from "../config/dbConnect";
+import styled from "styled-components";
+
+//  3:51
+
+const PdfStyles = styled.div`
+  @media screen, print {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    -webkit-print-color-adjust: exact;
+    position: relative;
+
+    .left_child_wrap {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      width: 15%;
+      height: 100%;
+
+      & > .left_child {
+        top: 50%;
+        left: 18%;
+        padding: 1rem;
+        transform: translate(-50%, -50%);
+        /* background-color: yellow; */
+        position: absolute;
+        height: 85%;
+        border-radius: 10px;
+        padding-top: 20px;
+        & > .Image {
+          width: 12rem;
+          height: 12rem;
+          background-color: white;
+          margin: 0 auto;
+          overflow: hidden;
+          border-radius: 10px;
+        }
+
+        & > .User_name {
+          text-align: center;
+          font-weight: 600;
+          font-size: 1.3rem;
+          margin: 2rem 0rem;
+        }
+
+        & > .User_data {
+          padding: 0.5rem 0rem;
+
+          h1 {
+            line-height: 2rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+          }
+
+          & > .Skills_wrap {
+            margin-top: 1.5rem;
+          }
+        }
+
+        & > .Data_wrap > ul,
+        li,
+        p {
+          padding-left: 1rem;
+          font-size: 1rem;
+          line-height: 1.75rem;
+        }
+      }
+    }
+
+    .right_child_wrap {
+      /* background-color: #ff9d00; */
+      width: 85%;
+      height: 100%;
+      padding-left: 1rem;
+      padding-top: 3rem;
+      & > .right_child {
+        padding-left: 22%;
+        h1 {
+          line-height: 2rem;
+          font-size: 1.5rem;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+        }
+
+        & > .education {
+          padding-right: 0.5rem;
+          & > ul {
+            display: flex;
+            justify-content: space-around;
+            /* background-color: red; */
+            border-radius: 8px;
+            padding: 0.5rem 0rem;
+          }
+
+          & > .user_education_data ul {
+            display: flex;
+            margin-top: 0.5rem;
+            justify-content: space-around;
+            background-color: white;
+            border-radius: 8px;
+            padding: 0.5rem 0rem;
+            /* border: 1px solid black; */
+          }
+        }
+        & > .experince_wrap {
+          margin-top: 3rem;
+          & > .experince {
+            padding-right: 0.5rem;
+            & > ul {
+              display: flex;
+              justify-content: space-around;
+              /* background-color: red; */
+              border-radius: 8px;
+              padding: 0.5rem 0rem;
+            }
+
+            & > .user_experince_data ul {
+              display: flex;
+              margin-top: 0.5rem;
+              justify-content: space-around;
+              background-color: white;
+              border-radius: 8px;
+              padding: 0.5rem 0rem;
+              /* border: 1px solid black; */
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export default function UserCV({ profileDetails }) {
+  return (
+    <PdfStyles>
+      <div className="left_child_wrap">
+        <div className="left_child print:bg-yellow-200 bg-yellow-200  ">
+          <div className=" Image"></div>
+          <h1 className="User_name">Kaushal Kumar Soni</h1>
+          <div className="User_data">
+            <h1>Details</h1>
+            <div className="Data_wrap">
+              <ul>
+                <li>Address:- Data </li>
+                <li>Contact:- Data </li>
+                <li>Email:- Data </li>
+                <li>Faculty:- Data </li>
+                <li>Experince Year:- Data </li>
+                <li>Date Of Birth:- Data </li>
+              </ul>
+            </div>
+            <div className="Skills_wrap">
+              <h1>Skills</h1>
+              <div className="Data_wrap">
+                <p>Skill_1</p>
+                <p>Skill_2</p>
+                <p>Skill_3</p>
+                <p>Skill_4</p>
+                <p>Skill_5</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="right_child_wrap print:bg-yellow-300 bg-yellow-300  ">
+        <div className="right_child">
+          <h1>Education</h1>
+          <div className="education">
+            <ul className="print:bg-red-400 bg-red-400">
+              <li>Degree</li>
+              <li>Education Year</li>
+              <li>Board</li>
+              <li>Result</li>
+            </ul>
+
+            <div className="user_education_data">
+              <ul>
+                <li>Degree</li>
+                <li>Education Year</li>
+                <li>Board</li>
+                <li>Result</li>
+              </ul>
+              <ul>
+                <li>Degree</li>
+                <li>Education Year</li>
+                <li>Board</li>
+                <li>Result</li>
+              </ul>
+              <ul>
+                <li>Degree</li>
+                <li>Education Year</li>
+                <li>Board</li>
+                <li>Result</li>
+              </ul>
+              <ul>
+                <li>Degree</li>
+                <li>Education Year</li>
+                <li>Board</li>
+                <li>Result</li>
+              </ul>
+            </div>
+          </div>
+          <div className="experince_wrap">
+            <h1>Experince</h1>
+            <div className="experince">
+              <ul className="print:bg-red-400 bg-red-400">
+                <li>Organization</li>
+                <li>Designation</li>
+                <li>Experince Year</li>
+                <li>Subject</li>
+              </ul>
+              <div className="user_experince_data">
+                <ul>
+                  <li>Organization</li>
+                  <li>Designation</li>
+                  <li>Experince Year</li>
+                  <li>Subject</li>
+                </ul>
+                <ul>
+                  <li>Organization</li>
+                  <li>Designation</li>
+                  <li>Experince Year</li>
+                  <li>Subject</li>
+                </ul>
+                <ul>
+                  <li>Organization</li>
+                  <li>Designation</li>
+                  <li>Experince Year</li>
+                  <li>Subject</li>
+                </ul>
+                <ul>
+                  <li>Organization</li>
+                  <li>Designation</li>
+                  <li>Experince Year</li>
+                  <li>Subject</li>
+                </ul>
+                <ul>
+                  <li>Organization</li>
+                  <li>Designation</li>
+                  <li>Experince Year</li>
+                  <li>Subject</li>
+                </ul>
+                <ul>
+                  <li>Organization</li>
+                  <li>Designation</li>
+                  <li>Experince Year</li>
+                  <li>Subject</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </PdfStyles>
+  );
+}
+
+export async function getServerSideProps(event) {
+  dbConnect();
+
+  const user = await User.findOne({
+    user_handle: event.query.profileid,
+  }).lean();
+
+  const profileDetails = JSON.parse(JSON.stringify(user));
+
+  return { props: { profileDetails } };
+}

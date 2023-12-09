@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input {
+  -webkit-appearance: none;
+}
+
+/* for scroll bar  */
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #4b4b4b;
+}
+
+/* Handle 😂 */
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: #ff9d00;
+}
