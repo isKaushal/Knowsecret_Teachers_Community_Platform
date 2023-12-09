@@ -61,7 +61,11 @@ function ErrorMessage({ data }) {
     <AnimatePresence>
       {Animate ? (
         <motion.div
-          className={Animate ? "fixed bottom-10 left-10 z-10 text-white bg-red-600 rounded-md py-4 px-6" : "py-0 px-0"}
+          className={
+            Animate
+              ? "fixed bottom-10 left-10 z-10 text-white bg-red-600 rounded-md py-4 px-6"
+              : "py-0 px-0"
+          }
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{
             opacity: 1,
@@ -174,10 +178,7 @@ function Generaldetails({ setgetformimage }) {
     // jpg png checker
     let image = event.target;
     let File = image.files[0];
-    if (
-      File.size <= 100000
-      // && File.type === "image/jpeg"
-    ) {
+    if (File.size <= 100000 && File.type === "image/jpeg") {
       let reader = new FileReader();
       reader.onloadend = function () {
         let convertedimage = reader.result;
@@ -224,7 +225,8 @@ function Generaldetails({ setgetformimage }) {
     <section>
       <h2 className=" p-4 text-xl mb-4  pb-0">Select your image </h2>
       <h5 className=" p-4 text-white h3 text-sm pt-0 ">
-        Note Image Size Should Be Less Than 100kb And <br /> Dimensions Are 500 By 500
+        Note Image Size Should Be Less Than 100kb And <br /> Dimensions Are 500
+        By 500
       </h5>
       <div className="h-[10rem] md:flex md:h-[3.5rem] lg:flex lg:h-[3.5rem] justify-center items-center w-full ">
         <div className="xl:w-[40%]  lg:w-[50%] md:w-[50%] sm:w-[100%] flex justify-center items-center relative">
@@ -254,8 +256,21 @@ function Generaldetails({ setgetformimage }) {
 
       <h2 className=" p-4 text-xl mb-4  pb-0 ">Your Details:-</h2>
       <div className="h-[7rem] md:flex md:h-[3.5rem] lg:flex lg:h-[3.5rem] justify-center items-center w-full  ">
-        <Input name="Username" onChange={catchData} id="name" type="text" placeholder="Name*" />
-        <Input name="Dob" placeholder="DOB" id="Dob" onChange={catchData} type="date" className="w-full" />
+        <Input
+          name="Username"
+          onChange={catchData}
+          id="name"
+          type="text"
+          placeholder="Name*"
+        />
+        <Input
+          name="Dob"
+          placeholder="DOB"
+          id="Dob"
+          onChange={catchData}
+          type="date"
+          className="w-full"
+        />
       </div>
       <div className="h-[7rem] md:flex md:h-[3.5rem] lg:flex lg:h-[3.5rem] justify-center items-center w-full">
         <Input
@@ -266,7 +281,14 @@ function Generaldetails({ setgetformimage }) {
           type="text"
           placeholder="Address*"
         />
-        <Input className="p-5 mx-1" name="City" id="city" onChange={catchData} type="text" placeholder="City*" />
+        <Input
+          className="p-5 mx-1"
+          name="City"
+          id="city"
+          onChange={catchData}
+          type="text"
+          placeholder="City*"
+        />
       </div>
       <div className="h-[7rem] md:flex md:h-[3.5rem] lg:flex lg:h-[3.5rem] justify-center items-center w-full">
         <Input
@@ -288,7 +310,13 @@ function Generaldetails({ setgetformimage }) {
       </div>
 
       <div className="h-[7rem] md:flex md:h-[3.5rem] lg:flex lg:h-[3.5rem] justify-center items-center w-full">
-        <Input className="p-5 mx-1" name="Faculty" onChange={catchData} type="text" placeholder="Faculty *" />
+        <Input
+          className="p-5 mx-1"
+          name="Faculty"
+          onChange={catchData}
+          type="text"
+          placeholder="Faculty *"
+        />
         <Input
           className="p-5 mx-1"
           name="Pincode"
@@ -339,7 +367,9 @@ function Gender({ setgetGender }) {
   const GenderSelect = (event) => {
     setGetgender((prev) => ({
       ...prev,
-      [event.target.id]: (event.target.value = event.target.checked ? true : false),
+      [event.target.id]: (event.target.value = event.target.checked
+        ? true
+        : false),
     }));
   };
 
@@ -347,9 +377,27 @@ function Gender({ setgetGender }) {
     <div className="sm:w-[50%] mb-10 lg:mb-0   p-2">
       <h3 className=" text-xl mb-4  pb-0">Gender :-</h3>
       <div className="w-full pl-[2rem] md:pl-[6rem] ">
-        <InputCheck className=" m-2 " onChange={GenderSelect} id="Male" type="checkbox" label="Male" />
-        <InputCheck className=" m-2 " onChange={GenderSelect} id="Female" type="checkbox" label="Female" />
-        <InputCheck className=" m-2 " onChange={GenderSelect} id="NotSay" type="checkbox" label="Rather Not Say" />
+        <InputCheck
+          className=" m-2 "
+          onChange={GenderSelect}
+          id="Male"
+          type="checkbox"
+          label="Male"
+        />
+        <InputCheck
+          className=" m-2 "
+          onChange={GenderSelect}
+          id="Female"
+          type="checkbox"
+          label="Female"
+        />
+        <InputCheck
+          className=" m-2 "
+          onChange={GenderSelect}
+          id="NotSay"
+          type="checkbox"
+          label="Rather Not Say"
+        />
       </div>
     </div>
   );
@@ -392,7 +440,14 @@ function Hobbies({ setHobbies }) {
       <h2 className="pb-0 text-xl mb-4">Hobbies :-</h2>
       <div className="w-full">
         <div className="w-full pl-[2rem] md:pl-[6rem]">
-          <InputCheck className=" m-2 " onChange={checkvalue} name="Music" id="music" type="checkbox" label="Music" />
+          <InputCheck
+            className=" m-2 "
+            onChange={checkvalue}
+            name="Music"
+            id="music"
+            type="checkbox"
+            label="Music"
+          />
           <InputCheck
             className=" m-2 "
             onChange={checkvalue}
@@ -401,7 +456,14 @@ function Hobbies({ setHobbies }) {
             type="checkbox"
             label="Travel"
           />
-          <InputCheck className=" m-2 " onChange={checkvalue} name="Movie" id="movie" type="checkbox" label="Movie" />
+          <InputCheck
+            className=" m-2 "
+            onChange={checkvalue}
+            name="Movie"
+            id="movie"
+            type="checkbox"
+            label="Movie"
+          />
           <InputCheck
             className=" m-2 "
             onChange={checkvalue}
@@ -468,18 +530,46 @@ function Education({ setEducation }) {
   return (
     <section>
       <h2 className="pb-0 text-xl mb-4 ">Education:-</h2>
-      <h5 className="h3 text-sm pb-2  text-white ">Recomended only FOUR(4) :-</h5>
+      <h5 className="h3 text-sm pb-2  text-white ">
+        Recomended only FOUR(4) :-
+      </h5>
       <div className=" block  ">
         <div className="h-[7rem] md:flex md:h-[3.5rem] lg:flex lg:h-[3.5rem] justify-center items-center w-full ">
-          <Input type="text" onChange={onChangeInput} name="Degree" placeholder="Your degree*" />
-          <Input type="text" onChange={onChangeInput} name="EducationYear" placeholder="Complete Year*" />
+          <Input
+            type="text"
+            onChange={onChangeInput}
+            name="Degree"
+            placeholder="Your degree*"
+          />
+          <Input
+            type="text"
+            onChange={onChangeInput}
+            name="EducationYear"
+            placeholder="Complete Year*"
+          />
         </div>
         <div className="h-[7rem] md:flex md:h-[3.5rem] lg:flex lg:h-[3.5rem] justify-center items-center w-full ">
-          <Input type="text" onChange={onChangeInput} name="Board" placeholder="university/board*" />
-          <Input type="text" onChange={onChangeInput} name="Result" placeholder="Result(Presentage)*" />
+          <Input
+            type="text"
+            onChange={onChangeInput}
+            name="Board"
+            placeholder="university/board*"
+          />
+          <Input
+            type="text"
+            onChange={onChangeInput}
+            name="Result"
+            placeholder="Result(Presentage)*"
+          />
         </div>
       </div>
-      <h1 className={educationDataList.length < 4 ? FormStyle.errorMsgHide : FormStyle.errorMsg}>
+      <h1
+        className={
+          educationDataList.length < 4
+            ? FormStyle.errorMsgHide
+            : FormStyle.errorMsg
+        }
+      >
         Maximum Length Reached ✖
       </h1>
       <div className="app">
@@ -497,7 +587,9 @@ function Education({ setEducation }) {
             <tr className="border-[1px] border-white">
               <td className="border-2 border-white text-center">Degree</td>
               <td className="border-2 border-white text-center">Year</td>
-              <td className="border-2 border-white text-center">University/Board</td>
+              <td className="border-2 border-white text-center">
+                University/Board
+              </td>
               <td className="border-2 border-white text-center">Result</td>
               <td className="border-2 border-white text-center w-[2rem] "></td>
             </tr>
@@ -506,10 +598,18 @@ function Education({ setEducation }) {
             {educationDataList.map((value, i) => {
               return (
                 <tr key={i}>
-                  <td className="border-[1px] border-gray-400 text-center">{value.Degree}</td>
-                  <td className="border-[1px] border-gray-400 text-center">{value.EducationYear}</td>
-                  <td className="border-[1px] border-gray-400 text-center">{value.Board}</td>
-                  <td className="border-[1px] border-gray-400 text-center">{value.Result}</td>
+                  <td className="border-[1px] border-gray-400 text-center">
+                    {value.Degree}
+                  </td>
+                  <td className="border-[1px] border-gray-400 text-center">
+                    {value.EducationYear}
+                  </td>
+                  <td className="border-[1px] border-gray-400 text-center">
+                    {value.Board}
+                  </td>
+                  <td className="border-[1px] border-gray-400 text-center">
+                    {value.Result}
+                  </td>
                   <td
                     className="border-[1px] border-gray-400 text-center cursor-pointer "
                     onClick={() => removeEducation(value.id)}
@@ -572,21 +672,52 @@ function Experince({ setExperince }) {
       <h5 className=" text-white h3 text-sm  ">Recomended only FOUR(4) :-</h5>
       <div className="block ">
         <div className="h-[7rem] md:flex md:h-[3.5rem] lg:flex lg:h-[3.5rem] justify-center items-center w-full  ">
-          <Input type="text" onChange={onInputchange} name="Organization" placeholder="Organization*" />
-          <Input type="text" onChange={onInputchange} name="Designation" placeholder="Designation*" />
+          <Input
+            type="text"
+            onChange={onInputchange}
+            name="Organization"
+            placeholder="Organization*"
+          />
+          <Input
+            type="text"
+            onChange={onInputchange}
+            name="Designation"
+            placeholder="Designation*"
+          />
         </div>
         <div className="h-[7rem] md:flex md:h-[3.5rem] lg:flex lg:h-[3.5rem] justify-center items-center w-full  ">
-          <Input type="text" onChange={onInputchange} name="ExperinceYear" placeholder="Complete Year*" />
-          <Input type="text" onChange={onInputchange} name="Subject" placeholder="Subject*" />
+          <Input
+            type="text"
+            onChange={onInputchange}
+            name="ExperinceYear"
+            placeholder="Complete Year*"
+          />
+          <Input
+            type="text"
+            onChange={onInputchange}
+            name="Subject"
+            placeholder="Subject*"
+          />
         </div>
       </div>
-      <table id="table2" style={{ width: "100%", marginTop: "2rem", marginBottom: "2rem" }}>
+      <table
+        id="table2"
+        style={{ width: "100%", marginTop: "2rem", marginBottom: "2rem" }}
+      >
         <thead>
           <tr>
-            <td className="border-2 border-white text-center text-white ">Year</td>
-            <td className="border-2 border-white text-center text-white ">Organization</td>
-            <td className="border-2 border-white text-center text-white ">Year</td>
-            <td className="border-2 border-white text-center text-white ">Subject</td>
+            <td className="border-2 border-white text-center text-white ">
+              Year
+            </td>
+            <td className="border-2 border-white text-center text-white ">
+              Organization
+            </td>
+            <td className="border-2 border-white text-center text-white ">
+              Year
+            </td>
+            <td className="border-2 border-white text-center text-white ">
+              Subject
+            </td>
             <td className="border-2 border-white text-center w-[2rem] "></td>
           </tr>
         </thead>
@@ -594,10 +725,18 @@ function Experince({ setExperince }) {
           {experinceDataList.map((expData, index) => {
             return (
               <tr key={index}>
-                <td className="border-[1px] border-gray-400 text-center text-white ">{expData.Organization}</td>
-                <td className="border-[1px] border-gray-400 text-center text-white ">{expData.Designation}</td>
-                <td className="border-[1px] border-gray-400 text-center text-white ">{expData.ExperinceYear}</td>
-                <td className="border-[1px] border-gray-400 text-center text-white ">{expData.Subject}</td>
+                <td className="border-[1px] border-gray-400 text-center text-white ">
+                  {expData.Organization}
+                </td>
+                <td className="border-[1px] border-gray-400 text-center text-white ">
+                  {expData.Designation}
+                </td>
+                <td className="border-[1px] border-gray-400 text-center text-white ">
+                  {expData.ExperinceYear}
+                </td>
+                <td className="border-[1px] border-gray-400 text-center text-white ">
+                  {expData.Subject}
+                </td>
                 <td
                   className="remove  border-[1px] border-gray-400 text-center cursor-pointer"
                   onClick={() => removeExperince(expData.id)}
@@ -609,7 +748,12 @@ function Experince({ setExperince }) {
           })}
         </tbody>
       </table>
-      <Button label="ADD" width="10rem" height="3.5rem" onclick={addExperince} />
+      <Button
+        label="ADD"
+        width="10rem"
+        height="3.5rem"
+        onclick={addExperince}
+      />
     </section>
   );
 }
@@ -651,16 +795,32 @@ function Awards({ setAwards }) {
 
   return (
     <section>
-      <h2 className="p-4 pl-0 text-xl mb-4  pb-0">Awards/Certificates/Participation:-</h2>
+      <h2 className="p-4 pl-0 text-xl mb-4  pb-0">
+        Awards/Certificates/Participation:-
+      </h2>
       <div className="h-[7rem] md:flex md:h-[3.5rem] lg:flex lg:h-[3.5rem] justify-center items-center w-full">
-        <Input placeholder="Award year" onChange={dataAwards} type="number" name="AwardYear" />
-        <Input placeholder="Award name" onChange={dataAwards} type="text" name="AwardName" />
+        <Input
+          placeholder="Award year"
+          onChange={dataAwards}
+          type="number"
+          name="AwardYear"
+        />
+        <Input
+          placeholder="Award name"
+          onChange={dataAwards}
+          type="text"
+          name="AwardName"
+        />
       </div>
       <table className="w-full my-4  ">
         <thead>
           <tr>
-            <td className="border-2 border-white text-white text-center ">Award year</td>
-            <td className="border-2 border-white text-white text-center ">Award name</td>
+            <td className="border-2 border-white text-white text-center ">
+              Award year
+            </td>
+            <td className="border-2 border-white text-white text-center ">
+              Award name
+            </td>
             <td className="border-2 border-white w-[2rem] "></td>
           </tr>
         </thead>
@@ -668,8 +828,12 @@ function Awards({ setAwards }) {
           {awardsList.map((awards, index) => {
             return (
               <tr key={index}>
-                <td className="border-[1px] border-gray-400 text-white text-center ">{awards.AwardYear}</td>
-                <td className="border-[1px] border-gray-400 text-white text-center ">{awards.AwardName}</td>
+                <td className="border-[1px] border-gray-400 text-white text-center ">
+                  {awards.AwardYear}
+                </td>
+                <td className="border-[1px] border-gray-400 text-white text-center ">
+                  {awards.AwardName}
+                </td>
                 <td
                   className="border-[1px] border-gray-400 text-center cursor-pointer "
                   onClick={() => removeAwards(awards.id)}
@@ -681,7 +845,12 @@ function Awards({ setAwards }) {
           })}
         </tbody>
       </table>
-      <Button label="ADD" width="10rem" height="3.5rem" onclick={AwardsDataPost} />
+      <Button
+        label="ADD"
+        width="10rem"
+        height="3.5rem"
+        onclick={AwardsDataPost}
+      />
     </section>
   );
 }
@@ -866,25 +1035,46 @@ function WorkShops({ setWorkshops }) {
   return (
     <div className="py-14">
       <div className="h-[7rem] md:flex md:h-[3.5rem] lg:flex lg:h-[3.5rem] justify-center items-center w-full   ">
-        <Input name="Work_Shop" onChange={HandleWorkShop} placeholder="Work Shop Name" type="text" />
-        <Input name="Work_Place" onChange={HandleWorkShop} placeholder="Work Shop Place" type="text" />
+        <Input
+          name="Work_Shop"
+          onChange={HandleWorkShop}
+          placeholder="Work Shop Name"
+          type="text"
+        />
+        <Input
+          name="Work_Place"
+          onChange={HandleWorkShop}
+          placeholder="Work Shop Place"
+          type="text"
+        />
       </div>
       <Button label="ADD" onclick={addWorkShop} />
 
       <table className="w-full my-4">
         <thead>
           <tr className="border-[1px] border-white text-white">
-            <td className=" w-[50%] border-2 border-white text-center">Work Shop Name</td>
-            <td className=" w-[50%] border-2 border-white text-center">Work Shop Place</td>
+            <td className=" w-[50%] border-2 border-white text-center">
+              Work Shop Name
+            </td>
+            <td className=" w-[50%] border-2 border-white text-center">
+              Work Shop Place
+            </td>
           </tr>
         </thead>
         <tbody>
           {workshopArray.map((value, index) => {
             return (
               <tr key={index} className="border-[1px] border-white text-white">
-                <td className=" w-[50%] border-[1px] border-white text-center">{value.workShopName}</td>
-                <td className=" w-[50%] border-[1px] border-white text-center">{value.workShopPlace}</td>
-                <td className="cursor-pointer" onClick={() => FilterWork(value.id)}>
+                <td className=" w-[50%] border-[1px] border-white text-center">
+                  {value.workShopName}
+                </td>
+                <td className=" w-[50%] border-[1px] border-white text-center">
+                  {value.workShopPlace}
+                </td>
+                <td
+                  className="cursor-pointer"
+                  onClick={() => FilterWork(value.id)}
+                >
                   ✖
                 </td>
               </tr>
@@ -936,7 +1126,10 @@ function Testimonials({ setTestimonials }) {
   return (
     <section>
       <h2 className="p-4 text-xl mb-4 pb-0">Testimonials(Optional):-</h2>
-      <h1 id="testimonial-toggle-arrow" className="cursor-pointer pl-10 text-white flex text-2xl"></h1>
+      <h1
+        id="testimonial-toggle-arrow"
+        className="cursor-pointer pl-10 text-white flex text-2xl"
+      ></h1>
       <div id="" className="my-8">
         <div
           id="tastimonial-container"
@@ -973,9 +1166,15 @@ function Testimonials({ setTestimonials }) {
         <table className="w-full my-4 ">
           <thead>
             <tr>
-              <td className="border-2 border-white text-center text-white ">Student Name</td>
-              <td className="border-2 border-white text-center text-white ">Student Class</td>
-              <td className="border-2 border-white text-center text-white ">For Student</td>
+              <td className="border-2 border-white text-center text-white ">
+                Student Name
+              </td>
+              <td className="border-2 border-white text-center text-white ">
+                Student Class
+              </td>
+              <td className="border-2 border-white text-center text-white ">
+                For Student
+              </td>
               <td className="border-2 border-white text-center text-white w-8 "></td>
             </tr>
           </thead>
@@ -983,9 +1182,15 @@ function Testimonials({ setTestimonials }) {
             {testimonialsList.map((data, index) => {
               return (
                 <tr key={index}>
-                  <td className="border-[1px] border-gray-400 text-center text-white ">{data.StudentName}</td>
-                  <td className="border-[1px] border-gray-400 text-center text-white ">{data.StudentClass}</td>
-                  <td className="border-[1px] border-gray-400 text-center text-white ">{data.ForStudents}</td>
+                  <td className="border-[1px] border-gray-400 text-center text-white ">
+                    {data.StudentName}
+                  </td>
+                  <td className="border-[1px] border-gray-400 text-center text-white ">
+                    {data.StudentClass}
+                  </td>
+                  <td className="border-[1px] border-gray-400 text-center text-white ">
+                    {data.ForStudents}
+                  </td>
                   <td
                     className="border-[1px] border-gray-400 text-center text-white w-8 cursor-pointer "
                     onClick={() => testimonialsRemove(data.id)}
@@ -997,7 +1202,12 @@ function Testimonials({ setTestimonials }) {
             })}
           </tbody>
         </table>
-        <Button label="ADD" width="10rem" height="3.5rem" onclick={addTestimonials} />
+        <Button
+          label="ADD"
+          width="10rem"
+          height="3.5rem"
+          onclick={addTestimonials}
+        />
       </div>
     </section>
   );
@@ -1026,7 +1236,10 @@ function UIBalls() {
   return (
     <UIBallsDesign>
       <div style={{ top: "10%", left: "0%" }} className="ball_1"></div>
-      <div style={{ top: "40%", left: "-10%", width: "400px", height: "400px" }} className="ball_2"></div>
+      <div
+        style={{ top: "40%", left: "-10%", width: "400px", height: "400px" }}
+        className="ball_2"
+      ></div>
       <div
         style={{
           top: "25%",
@@ -1037,8 +1250,14 @@ function UIBalls() {
         }}
         className="ball_3"
       ></div>
-      <div style={{ top: "65%", right: "10%", width: "250px", height: "250px" }} className="ball_4"></div>
-      <div style={{ top: "90%", right: "-8%", width: "500px", height: "500px" }} className="ball_5"></div>
+      <div
+        style={{ top: "65%", right: "10%", width: "250px", height: "250px" }}
+        className="ball_4"
+      ></div>
+      <div
+        style={{ top: "90%", right: "-8%", width: "500px", height: "500px" }}
+        className="ball_5"
+      ></div>
       {/* <div style={{ top: "60%", left: "90%" }} className="ball_6"></div>
       <div style={{ top: "70%", left: "0%" }} className="ball_7"></div>
       <div style={{ top: "80%", left: "90%" }} className="ball_8"></div>
@@ -1133,12 +1352,12 @@ export default function Form() {
     }
   };
   return (
-    <div className=" w-full overflow-hidden bg-[#ffd0b0] relative">
+    <div className="w-full overflow-hidden bg-[#ffd0b0] relative">
       {/* //  remove it */}
       {/* <div className=" w-full overflow-hidden bg-[#000000] relative "> */}
       {/* // remove it */}
       <ErrorMessage data={msg} />
-      {loder ? <Preloder /> : null}
+      {loder && <Preloder />}
       <div className=" w-screen h-max relative ">
         <UIBalls />
         <div className=" xl:px-[5rem] lg:px-[3rem] md:px-[2rem] sm:px-[0rem] px-[1rem] ">

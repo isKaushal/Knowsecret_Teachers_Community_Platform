@@ -79,14 +79,22 @@ function ErrorMsg({ Msg }) {
           }}
           exit={{ x: -1000, opacity: 0 }}
         >
-          {Msg?.error === null ? "Welcome To KnowSecret" : "Please Check Credentials"}
+          {Msg?.error === null
+            ? "Welcome To KnowSecret"
+            : "Please Check Credentials"}
         </motion.div>
       ) : null}
     </AnimatePresence>
   );
 }
 
-function InputFeild({ type = "text", placeholder = "Enter Here", label = "", name = "", ...rest }) {
+function InputFeild({
+  type = "text",
+  placeholder = "Enter Here",
+  label = "",
+  name = "",
+  ...rest
+}) {
   return (
     <div className="w-full grid">
       <label className={styles.label}>
@@ -162,19 +170,29 @@ export default function AdminLogin() {
               <motion.div className="flex">
                 <form onSubmit={onSubmit} className="w-full h-full">
                   <div className="py-4 grid w-full h-full  ">
-                    <InputFeild placeholder="Enter Email" label="Email" name="Email" type="email" />
-                    <Inputpassword placeholder="Enter Password" label="Password" name="Password" type="password" />
+                    <InputFeild
+                      placeholder="Enter Email"
+                      label="Email"
+                      name="Email"
+                      type="email"
+                    />
+                    <Inputpassword
+                      placeholder="Enter Password"
+                      label="Password"
+                      name="Password"
+                      type="password"
+                    />
                     <Button />
                   </div>
                 </form>
-                <form onSubmit={onSubmit} className="w-full h-full">
+                {/* <form onSubmit={onSubmit} className="w-full h-full">
                   <div className="py-4 grid w-full h-full  ">
                     <InputFeild placeholder="Enter Email" label="Email" name="Email" type="email" />
                     <InputFeild placeholder="Name" label="Enter Your Name" name="Username" type="text" />
                     <Inputpassword placeholder="Enter Password" label="Password" name="Password" type="password" />
                     <Button />
                   </div>
-                </form>
+                </form> */}
               </motion.div>
             </div>
           </div>
